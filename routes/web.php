@@ -7,16 +7,16 @@ Route::get('users', static function () {
     return User::all();
 });
 
-Route::get('users/{name?}/{email?}/{age?}',
-    static function (?string $name = '', ?string $email = '', ?int $age = 0) {
-        return "$name $email $age";
-    })
+Route::view('users/{name?}/{email?}/{age?}', 'users.userDetails')
     ->whereAlpha('name')
     ->whereAlpha('email')
-    ->whereNumber('age');
+    ->whereNumber('age')
+    ->defaults('age', 0);
 
 Route::get('users/{user}', static function (User $user) {
     return $user;
 })
     ->whereNumber('id');
-Route::get('/', static fn() => view('welcome'));
+
+Route::get('/', static fn () => view('welcome'));
+Route::redirect('/', 'users');
