@@ -1,3 +1,10 @@
-<div>
-    <!-- Life is available only in the present moment. - Thich Nhat Hanh -->
-</div>
+<x-layouts.default>
+    <x-slot:title>
+
+    </x-slot:title>
+    <div>
+        <h1>Blog</h1>
+
+
+    </div>
+</x-layouts.default>

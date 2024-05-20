@@ -1,19 +1,20 @@
 <?php
 
-namespace App\View\Components\Layouts;
+namespace App\View\Components\users;
 
 use Closure;
 use Illuminate\Contracts\View\View;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\View\Component;
 
-class App extends Component
+class UserList extends Component
 {
     /**
      * Create a new component instance.
+     * @param array<LengthAwarePaginator> $users
      */
-    public function __construct()
+    public function __construct(public $users)
     {
-        //
     }
 
     /**
@@ -21,6 +22,6 @@ class App extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.layouts.app');
+        return view('components.users.user-list');
     }
 }
