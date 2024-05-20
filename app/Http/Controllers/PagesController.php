@@ -27,19 +27,8 @@ class PagesController extends Controller
     public function staff(): View
     {
         $staff = User::paginate(10);
+        //  $staff = [];
         $title = 'List of Staff';
         return view('pages.staff', compact('staff', 'title'));
-//        return view('pages.staff', [
-//            'staff' => $staff,
-//            'title' => 'List of Staff'
-//        ]);
-        // return view('pages.staff', compact('staff', 'title'));
-//        return view('pages.staff')
-//            ->with('staff', $staff)
-//            ->with('title', $title);
-
-//        return view('pages.staff')
-//            ->withStaff($staff)
-//            ->withTitle($title);
     }
 }
