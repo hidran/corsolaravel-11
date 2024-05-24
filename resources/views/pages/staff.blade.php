@@ -1,10 +1,15 @@
-<x-layouts.default>
-    <x-slot:title>
-        {{$title}}
-    </x-slot:title>
+@extends('layouts.default')
+@section('title',$title)
+
+@section('content')
     <div>
         <h1>{{$title}}</h1>
-       
+
         <x-users.user-list :users="$staff"/>
     </div>
-</x-layouts.default>
+@endsection
+@section('script')
+    @parent
+    <script>alert(window.name)</script>
+
+@endsection
