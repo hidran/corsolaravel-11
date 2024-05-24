@@ -7,9 +7,12 @@
 
         <x-users.user-list :users="$staff"/>
     </div>
-@endsection
-@section('script')
-    @parent
-    <script>alert(window.name)</script>
 
 @endsection
+
+@section('script')
+    @include('components.script', ['comment'=>'//coment'])
+
+    <script>alert(window.name)</script>
+@endsection
+
